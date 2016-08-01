@@ -5,8 +5,29 @@ h1 {
   text-align: center;
 }
 
+p {
+  text-align: center;
+  font-size: 25px;
+}
+
+.results {
+
+  height: 60vh;
+  width: 500px;
+  margin: 0 auto;
+  border: black 1px solid;
+}
+
+img {
+  margin-left: 230px;
+}
 form {
-  height: 100vh;
+  height: 10vh;
   width: 250px;
   margin: 0 auto;
+}
+
+.save {
+  position: relative;
+  margin-left: 200px;
 }
