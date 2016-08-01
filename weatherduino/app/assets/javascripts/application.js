@@ -21,8 +21,11 @@
 $(document).ready(function() {
   console.log("Hello")
 
-function getWeather() {
-  $.getJSON('/weather').done(function( weather ) {
+function getWeather(e) {
+    e.preventDefault();
+   zip = $('.zipsearch').val()
+   console.log("this is the zip", zip)
+  $.getJSON('/weather', {zipcode: zip}).done(function( weather ) {
       console.log(weather.current_observation)
       let $results = $('.results')
       let $img = $('<img>').attr({
@@ -49,9 +52,10 @@ function getWeather() {
 
 }
 
-  $(function() {
-    getWeather();
-  })
+$('form').submit(getWeather)
+  // $(function() {
+  //   getWeather();
+  // })
     // console.log(weather)
     // let response = weather.current_observation
     // response.Each(function(obj) {
@@ -60,18 +64,18 @@ function getWeather() {
 // function getData(e) {
 // e.preventDefault()
 
-//   zip = $('zipsearch').val();
+  zip = $('zipsearch').val();
 //   $.getJSON('http://api.wunderground.com/api/91ae0e4eb2f590/conditions/q/'+zip+'.json').done(function(weather) {
 //       console.log(weather, 'hi')
 //   });
 
 
 
-function saveLocation(e){
-  $('.save').click(function(event) {
-   console.log("clicked")
-  });
-}
+// function saveLocation(e){
+//   $('.save').click(function(event) {
+//    console.log("clicked")
+//   });
+// }
 
 
 
