@@ -23,26 +23,31 @@ $(document).ready(function() {
 
 function getWeather(e) {
     e.preventDefault();
-   zip = $('.zipsearch').val()
-   console.log("this is the zip", zip)
+    $('.results').empty();
+    zip = $('.zipsearch').val()
+
   $.getJSON('/weather', {zipcode: zip}).done(function( weather ) {
+      $('.results').empty();
+      $('#results_container').empty();
       console.log(weather.current_observation)
-      let $results = $('.results')
+
+      let $div = $("<div class='results'>")
       let $img = $('<img>').attr({
         src: weather.current_observation.icon_url
       });
       let $p = $('<p>').text("Feels like: " + weather.current_observation.feelslike_f + " F")
-       let $p2 = $('<p>').text("Showing conditions for: " + weather.current_observation.display_location.city)
+       let $p2 = $('<p>').attr('id', weather.current_observation.display_location.zip).text("Showing conditions for: " + weather.current_observation.display_location.city)
        let $p3 = $('<p>').text("Humidity: " + weather.current_observation.relative_humidity)
        let $p4 = $('<p>').text("Conditions: \n" + weather.current_observation.weather)
        let $SaveLocation = $('<button class="save">').text("Save Location")
-      $results.append($p2)
-      $results.append($p)
-      $results.append($p3)
-      $results.append($p4)
-      $results.append($img)
-      $results.append($('<br>'))
-      $results.append($SaveLocation)
+      $div.append($p2)
+      $div.append($p)
+      $div.append($p3)
+      $div.append($p4)
+      $div.append($img)
+      $div.append($('<br>'))
+      $div.append($SaveLocation)
+      $('#results_container').append($div)
 
     let fellLike = weather.current_observation.relative_humidity
 
@@ -64,18 +69,37 @@ $('form').submit(getWeather)
 // function getData(e) {
 // e.preventDefault()
 
-  zip = $('zipsearch').val();
+
 //   $.getJSON('http://api.wunderground.com/api/91ae0e4eb2f590/conditions/q/'+zip+'.json').done(function(weather) {
 //       console.log(weather, 'hi')
 //   });
 
 
 
-// function saveLocation(e){
-//   $('.save').click(function(event) {
-//    console.log("clicked")
-//   });
-// }
+function saveLocation(e){
+  $('.save').click(function(event) {
+    let $siblings = $(event.target).parent().children();
+    console.log($siblings)
+    let data = {
+      zip: $siblings.eq(0).attr("id")
+    }
+
+    console.log(data);
+    $.ajax({
+      url: '/weather',
+      method: 'post',
+      data: data
+    })
+    .done(function() {
+  alert("Successfully Saved!");
+})
+  });
+}
+
+
+
+
+
 
 
 
