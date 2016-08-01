@@ -43,7 +43,10 @@ function getWeather() {
 
     let fellLike = weather.current_observation.relative_humidity
 
+
+    saveLocation()
   })
+
 }
 
   $(function() {
@@ -63,13 +66,12 @@ function getWeather() {
 //   });
 
 
+
 function saveLocation(e){
-
-
+  $('.save').click(function(event) {
+   console.log("clicked")
+  });
 }
-
-
-
 
 
 
