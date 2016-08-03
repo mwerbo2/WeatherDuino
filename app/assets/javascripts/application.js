@@ -18,7 +18,7 @@
 //   event.preventDefault()
 //   console.log("clicked", event)
 // });
-$(document).ready('turbolinks:load',function() {
+$(document).ready(function() {
   console.log("Hello")
 
 function getWeather(e) {
