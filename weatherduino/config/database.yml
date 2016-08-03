@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: weatherduino_production
   username: weatherduino
   password: <%= ENV['WEATHERDUINO_DATABASE_PASSWORD'] %>

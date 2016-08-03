@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  get '/saves' =>'saves#index'
 
+  root 'welcome#index'
   resources :weather
 
 
