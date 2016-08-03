@@ -1,0 +1,61 @@
+/* line 4, /Users/michaelwerbowsky/code/weatherapp/weatherduino/app/assets/stylesheets/welcome.scss */
+h1 {
+  text-align: center;
+  font-size: 5em;
+  margin-bottom: 10px;
+}
+
+/* line 10, /Users/michaelwerbowsky/code/weatherapp/weatherduino/app/assets/stylesheets/welcome.scss */
+p {
+  text-align: center;
+  font-size: 25px;
+}
+
+/* line 15, /Users/michaelwerbowsky/code/weatherapp/weatherduino/app/assets/stylesheets/welcome.scss */
+.results {
+  height: auto;
+  width: 500px;
+  margin: 0 auto;
+  border: black 1px solid;
+  padding-bottom: 20px;
+}
+
+/* line 23, /Users/michaelwerbowsky/code/weatherapp/weatherduino/app/assets/stylesheets/welcome.scss */
+.zipsearch {
+  height: 30px;
+  width: 173px;
+}
+
+/* line 28, /Users/michaelwerbowsky/code/weatherapp/weatherduino/app/assets/stylesheets/welcome.scss */
+img {
+  margin-left: 230px;
+}
+
+/* line 31, /Users/michaelwerbowsky/code/weatherapp/weatherduino/app/assets/stylesheets/welcome.scss */
+form {
+  height: 10vh;
+  width: 250px;
+  margin: 0 auto;
+}
+
+/* line 37, /Users/michaelwerbowsky/code/weatherapp/weatherduino/app/assets/stylesheets/welcome.scss */
+.save {
+  position: relative;
+  margin-left: 200px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
