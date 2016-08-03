@@ -1,11 +1,24 @@
-## WeatherDuino
+# README
 
-###Summary
-A simple app that displays today's weather conditions.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-###WireFrame
+Things you may want to cover:
 
-![](http://i.imgur.com/0i2zGJ0.png)
+* Ruby version
 
-###User Story
-As a user, you can view the weather conditions for the city you search for. You will also be able to save that searched location to your locations. 
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
