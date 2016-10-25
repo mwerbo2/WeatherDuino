@@ -19,17 +19,16 @@
 //   console.log("clicked", event)
 // });
 $(document).ready(function() {
-  console.log("Hello")
-
 function getWeather(e) {
     e.preventDefault();
     $('.results').empty();
-    zip = $('.zipsearch').val()
+    zip = $('.zipsearch').val();
 
-  $.getJSON('/weather', {zipcode: zip}).done(function( weather ) {
+  $.getJSON('/weather', {zipcode: zip})
+    .done(function( weather ) {
       $('.results').empty();
       $('#results_container').empty();
-      console.log(weather.current_observation)
+      console.log("weather object", weather)
 
       let $div = $("<div class='results'>")
       let $img = $('<img>').attr({
