@@ -3,7 +3,7 @@ require 'httparty'
 class WeatherController < ApplicationController
 
   def index
-    url = "http://api.wunderground.com/api/WUNDERGROUNDAPI/conditions/q/#{params[:zipcode]}.json"
+    url = "http://api.wunderground.com/api/" +WUNDERGROUNDAPI + "/conditions/q/#{params[:zipcode]}.json"
     response = HTTParty.get(url)
     parsed_body = JSON.parse(response.body)
     render json: parsed_body
